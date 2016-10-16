@@ -24,9 +24,9 @@ def convert_pwm(bin_str):
     pwm_str = ''
     for c in bin_str:
         if c == '1':
-            pwm_str += low
-        else:
             pwm_str += high
+        else:
+            pwm_str += low
     return pwm_str
 
 def transmit(d, pwm_str):
