@@ -6,6 +6,7 @@ from rflib import *
 FREQ = 0 #frequency
 DRATE = 0 #baud, or data rate
 NUM_TIMES = 0 #num times to send transmit per code
+REPEAT = 10 #num times to repeat the broadcast per code
 
 def configure(d):
     try:
@@ -45,7 +46,7 @@ d = RfCat()
 configure(d)
 
 chars = '01'
-to_attempt = product(chars, repeat=10)
+to_attempt = product(chars, REPEAT)
 count = 0
 for attempt in to_attempt:
     bin_str = ''.join(attempt)
